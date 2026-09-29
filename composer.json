@@ -1,0 +1,33 @@
+{
+  "name": "astral-php/astral-blog",
+  "description": "Astral Blog 1.0 — application blog complète (articles, tags, commentaires, auth, admin) basée sur astral-core + starter",
+  "type": "project",
+  "version": "1.0.0",
+  "license": "MIT",
+  "keywords": [
+    "astral",
+    "php",
+    "mvc",
+    "blog",
+    "cms"
+  ],
+  "homepage": "https://github.com/astral-php/astral-blog",
+  "require": {
+    "php": "^8.1",
+    "astral-php/astral-core": "^1.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "config": {
+    "optimize-autoloader": true,
+    "sort-packages": true
+  },
+  "scripts": {
+    "serve": "php -S 127.0.0.1:8083 -t public public/router.php"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}

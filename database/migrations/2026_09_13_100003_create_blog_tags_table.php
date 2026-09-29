@@ -1,0 +1,61 @@
+<?php
+
+declare(strict_types=1);
+
+use Database\Migration\Migration;
+
+class CreateBlogTagsTable extends Migration
+{
+    public function up(PDO $pdo): void
+    {
+        $driver = $pdo->getAttribute(PDO::ATTR_DRIVER_NAME);
+
+        if ($driver === 'sqlite') {
+            $pdo->exec(<<<'SQL'
+                CREATE TABLE IF NOT EXISTS blog_tags (
+                    id         INTEGER PRIMARY KEY,
+                    name       TEXT NOT NULL,
+                    slug       TEXT NOT NULL UNIQUE,
+                    created_at TEXT NOT NULL DEFAULT (datetime('now'))
+                )
+            SQL);
+            $pdo->exec(<<<'SQL'
+                CREATE TABLE IF NOT EXISTS blog_post_tag (
+                    post_id INTEGER NOT NULL REFERENCES blog_posts(id) ON DELETE CASCADE,
+                    tag_id  INTEGER NOT NULL REFERENCES blog_tags(id) ON DELETE CASCADE,
+                    PRIMARY KEY (post_id, tag_id)
+                )
+            SQL);
+            $pdo->exec('CREATE INDEX IF NOT EXISTS blog_post_tag_tag_idx ON blog_post_tag (tag_id)');
+        } else {
+            $pdo->exec(<<<'SQL'
+                CREATE TABLE IF NOT EXISTS `blog_tags` (
+                    `id`         INT UNSIGNED NOT NULL AUTO_INCREMENT,
+                    `name`       VARCHAR(120) NOT NULL,
+                    `slug`       VARCHAR(120) NOT NULL,
+                    `created_at` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+                    PRIMARY KEY (`id`),
+                    UNIQUE KEY `blog_tags_slug_unique` (`slug`)
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+            SQL);
+            $pdo->exec(<<<'SQL'
+                CREATE TABLE IF NOT EXISTS `blog_post_tag` (
+                    `post_id` INT UNSIGNED NOT NULL,
+                    `tag_id`  INT UNSIGNED NOT NULL,
+                    PRIMARY KEY (`post_id`, `tag_id`),
+                    KEY `blog_post_tag_tag_idx` (`tag_id`),
+                    CONSTRAINT `blog_post_tag_post_fk`
+                        FOREIGN KEY (`post_id`) REFERENCES `blog_posts` (`id`) ON DELETE CASCADE,
+                    CONSTRAINT `blog_post_tag_tag_fk`
+                        FOREIGN KEY (`tag_id`) REFERENCES `blog_tags` (`id`) ON DELETE CASCADE
+                ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci
+            SQL);
+        }
+    }
+
+    public function down(PDO $pdo): void
+    {
+        $pdo->exec('DROP TABLE IF EXISTS blog_post_tag');
+        $pdo->exec('DROP TABLE IF EXISTS blog_tags');
+    }
+}
