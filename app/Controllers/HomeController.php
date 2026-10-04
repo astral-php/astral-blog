@@ -19,7 +19,7 @@ final class HomeController extends AbstractController
         View $view,
         private UserDao $userDao,
         private PostDao $postDao,
-        private string $version = '1.0.0',
+        private string $version = '1.0.1',
         private string $githubUrl = 'https://github.com/astral-php',
         private string $websiteUrl = 'https://github.com/astral-php',
     ) {

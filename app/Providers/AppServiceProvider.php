@@ -80,7 +80,7 @@ final class AppServiceProvider implements ServiceProviderInterface
             view:       $c->make(View::class),
             userDao:    $c->make(UserDao::class),
             postDao:    $c->make(PostDao::class),
-            version:    (string) ($appConfig['version'] ?? '1.0.0'),
+            version:    (string) ($appConfig['version'] ?? '1.0.1'),
             githubUrl:  (string) ($appConfig['github_url'] ?? 'https://github.com/astral-php'),
             websiteUrl: (string) ($appConfig['website_url'] ?? 'https://github.com/astral-php'),
         ));
