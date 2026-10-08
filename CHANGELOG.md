@@ -1,5 +1,12 @@
 # Journal des modifications
 
+## [1.0.2] — 2026-10-08
+
+### Ajouté
+
+- Suite PHPUnit : smokes HTTP (`tests/Http`) — home, `/blog`, auth, admin (migrations auto en test).
+- Dépendance `astral-php/astral-core:^1.2.4`.
+
 ## [1.0.1] — 2026-10-04
 
 ### Ajouté
