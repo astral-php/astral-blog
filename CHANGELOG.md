@@ -1,5 +1,11 @@
 # Journal des modifications
 
+## [2.0.2] — 2026-10-31
+
+### Corrigé
+
+- Dépendance **astral-core 2.1.2** — restaure `bin/console`.
+
 ## [2.0.1] — 2026-10-31
 
 ### Modifié

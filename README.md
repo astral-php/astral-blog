@@ -5,7 +5,7 @@ Application **blog complet** pour [Astral](https://github.com/astral-php) — ba
 Articles, catégories, tags, commentaires modérés, auth, admin utilisateurs.
 
 [![PHP](https://img.shields.io/badge/PHP-8.3%2B-777BB4?logo=php&logoColor=white)](https://www.php.net)
-[![Version](https://img.shields.io/badge/version-2.0.1-blue)](./CHANGELOG.md)
+[![Version](https://img.shields.io/badge/version-2.0.2-blue)](./CHANGELOG.md)
 
 > Écosystème : [Astral MVC](https://github.com/astral-php/astral) · [Packagist astral-php](https://packagist.org/packages/astral-php/).
 > App `create-project` — pas un package `require`.
