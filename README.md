@@ -4,8 +4,8 @@ Application **blog complet** pour [Astral](https://github.com/astral-php) — ba
 
 Articles, catégories, tags, commentaires modérés, auth, admin utilisateurs.
 
-[![PHP](https://img.shields.io/badge/PHP-8.1%E2%80%938.5-777BB4?logo=php&logoColor=white)](https://www.php.net)
-[![Version](https://img.shields.io/badge/version-1.0.1-blue)](./CHANGELOG.md)
+[![PHP](https://img.shields.io/badge/PHP-8.3%2B-777BB4?logo=php&logoColor=white)](https://www.php.net)
+[![Version](https://img.shields.io/badge/version-2.0.0-blue)](./CHANGELOG.md)
 
 > Écosystème : [Astral MVC](https://github.com/astral-php/astral) · [Packagist astral-php](https://packagist.org/packages/astral-php/).
 > App `create-project` — pas un package `require`.
@@ -13,7 +13,7 @@ Articles, catégories, tags, commentaires modérés, auth, admin utilisateurs.
 ## Installation
 
 ```bash
-composer create-project astral-php/astral-blog mon-blog
+composer create-project astral-php/astral-blog:^2.0 mon-blog
 cd mon-blog
 cp .env.example .env
 php bin/console migrate
@@ -41,7 +41,7 @@ composer run serve
 | Article + commentaires publics (modération) | ✅ |
 | Admin articles / catégories / tags / commentaires | ✅ |
 | Migrations SQLite / MySQL | ✅ |
-| `astral-php/astral-core` ^1.2 | ✅ |
+| `astral-php/astral-core` ^2.1 | ✅ |
 
 ## Routes principales
 

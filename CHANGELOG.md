@@ -1,5 +1,17 @@
 # Journal des modifications
 
+## [2.0.0] — 2026-10-31
+
+### Breaking
+
+- PHP minimum : **`^8.3`**
+- `astral-php/astral-core` **^2.1**
+- `Role::ADMIN` / `USER` / `GUEST` → enum `Role::Admin` / `User` / `Guest`
+
+### Notes
+
+- Feuille 2.1 **P4**. Guide core : [UPGRADE-2.1](https://github.com/astral-php/astral-core/blob/main/UPGRADE-2.1.md) · hub [UPGRADE-2.0](https://github.com/astral-php/astral/blob/main/UPGRADE-2.0.md) pour Role.
+
 ## [1.0.2] — 2026-10-08
 
 ### Ajouté

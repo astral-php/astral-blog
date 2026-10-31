@@ -16,7 +16,7 @@
             <a class="btn btn-ghost" href="/register">Créer le compte admin</a>
         <?php elseif (!$auth->check()): ?>
             <a class="btn btn-ghost" href="/login">Se connecter</a>
-        <?php elseif ($auth->is(\Core\Auth\Role::ADMIN)): ?>
+        <?php elseif ($auth->is(\Core\Auth\Role::Admin)): ?>
             <a class="btn btn-ghost" href="/admin/blog/posts">Admin articles</a>
         <?php else: ?>
             <a class="btn btn-ghost" href="/profile">Mon profil</a>
@@ -54,7 +54,7 @@
 <section class="rounded-2xl border border-dashed border-sand-deep bg-white/70 px-6 py-10 text-center mb-8">
     <h2 class="font-display text-xl font-semibold text-ink">Aucun article publié</h2>
     <p class="mt-2 text-sm text-ink-muted">Créez un compte admin, puis publiez depuis l’admin blog.</p>
-    <?php if (!empty($hasUsers) && $auth->check() && $auth->is(\Core\Auth\Role::ADMIN)): ?>
+    <?php if (!empty($hasUsers) && $auth->check() && $auth->is(\Core\Auth\Role::Admin)): ?>
         <a href="/admin/blog/posts/create" class="inline-flex mt-5 px-4 py-2 rounded-full bg-pine text-white text-sm font-semibold no-underline">
             Nouvel article
         </a>

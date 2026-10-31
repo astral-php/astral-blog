@@ -49,12 +49,14 @@ final class UserDao extends AbstractDao
      *
      * @return list<User>
      */
-    public function findByRole(string $role): array
+    public function findByRole(Role|string $role): array
     {
+        $value = $role instanceof Role ? $role->value : $role;
+
         /** @var list<User> */
         return $this->query(
             sql:    "SELECT * FROM {$this->getTable()} WHERE role = :role ORDER BY name",
-            params: [':role' => $role],
+            params: [':role' => $value],
         );
     }
 
@@ -70,22 +72,24 @@ final class UserDao extends AbstractDao
         string $name,
         string $email,
         string $plainPassword,
-        string $role = Role::USER,
+        Role|string $role = Role::User,
     ): int {
         if ($this->findByEmail($email) !== null) {
             throw new DatabaseException("L'adresse e-mail {$email} est déjà utilisée.");
         }
 
+        $roleValue = $role instanceof Role ? $role->value : $role;
+
         // Le premier utilisateur de l'application devient automatiquement admin
         if ($this->count() === 0) {
-            $role = Role::ADMIN;
+            $roleValue = Role::Admin->value;
         }
 
         return $this->insert([
             'name'       => $name,
             'email'      => $email,
             'password'   => password_hash($plainPassword, PASSWORD_BCRYPT),
-            'role'       => Role::isValid($role) ? $role : Role::USER,
+            'role'       => Role::isValid($roleValue) ? $roleValue : Role::User->value,
             'created_at' => date('Y-m-d H:i:s'),
         ]);
     }
@@ -124,15 +128,17 @@ final class UserDao extends AbstractDao
     /**
      * Change le rôle d'un utilisateur.
      */
-    public function promote(int $userId, string $role): void
+    public function promote(int $userId, Role|string $role): void
     {
-        if (!Role::isValid($role)) {
-            throw new \InvalidArgumentException("Rôle invalide : {$role}");
+        $roleValue = $role instanceof Role ? $role->value : $role;
+
+        if (!Role::isValid($roleValue)) {
+            throw new \InvalidArgumentException("Rôle invalide : {$roleValue}");
         }
 
         $this->pdo->prepare(
             "UPDATE {$this->getTable()} SET role = :role WHERE id = :id"
-        )->execute([':role' => $role, ':id' => $userId]);
+        )->execute([':role' => $roleValue, ':id' => $userId]);
     }
 
     // -------------------------------------------------------------------------

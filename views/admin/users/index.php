@@ -54,7 +54,7 @@
                 <?php foreach ($users as $user): ?>
                 <?php
                     $isSelf      = $user->id === $auth->id();
-                    $isLastAdmin = $user->role === \Core\Auth\Role::ADMIN && $adminCount <= 1;
+                    $isLastAdmin = $user->role === \Core\Auth\Role::Admin->value && $adminCount <= 1;
                     $isDisabled  = $isSelf || $isLastAdmin;
                 ?>
                 <tr class="hover:bg-gray-50 transition <?= $isSelf ? 'bg-indigo-50/40' : '' ?>">
@@ -114,7 +114,7 @@
                                 <select name="role"
                                         class="text-sm border border-gray-200 rounded-lg px-2 py-1.5 bg-white text-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-indigo-400 transition">
                                     <?php foreach ($roles as $r): ?>
-                                        <?php if ($r === \Core\Auth\Role::GUEST) continue; ?>
+                                        <?php if ($r === \Core\Auth\Role::Guest->value) continue; ?>
                                         <option value="<?= htmlspecialchars($r, ENT_QUOTES, 'UTF-8') ?>"
                                             <?= $user->role === $r ? 'selected' : '' ?>>
                                             <?= htmlspecialchars(ucfirst($r), ENT_QUOTES, 'UTF-8') ?>

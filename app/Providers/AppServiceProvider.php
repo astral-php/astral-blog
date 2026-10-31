@@ -80,9 +80,9 @@ final class AppServiceProvider implements ServiceProviderInterface
             view:       $c->make(View::class),
             userDao:    $c->make(UserDao::class),
             postDao:    $c->make(PostDao::class),
-            version:    (string) ($appConfig['version'] ?? '1.0.2'),
-            githubUrl:  (string) ($appConfig['github_url'] ?? 'https://github.com/astral-php'),
-            websiteUrl: (string) ($appConfig['website_url'] ?? 'https://github.com/astral-php'),
+            version:    (string) ($appConfig['version'] ?? '2.0.0'),
+            githubUrl:  (string) ($appConfig['github_url'] ?? 'https://github.com/astral-php/astral-blog'),
+            websiteUrl: (string) ($appConfig['website_url'] ?? 'https://astral-php.dev'),
         ));
 
         $container->bind(UserController::class, fn (Container $c) => new UserController(

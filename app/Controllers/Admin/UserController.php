@@ -49,7 +49,7 @@ final class UserController extends AbstractController
     public function index(): Response
     {
         $users      = $this->userDao->findAll();
-        $adminCount = count($this->userDao->findByRole(Role::ADMIN));
+        $adminCount = count($this->userDao->findByRole(Role::Admin));
 
         return $this->render('admin/users/index', [
             'title'      => 'Gestion des rôles',
@@ -86,8 +86,8 @@ final class UserController extends AbstractController
             throw new NotFoundException("Utilisateur #{$userId} introuvable.");
         }
 
-        if ($user->role === Role::ADMIN && $newRole !== Role::ADMIN) {
-            $adminCount = count($this->userDao->findByRole(Role::ADMIN));
+        if ($user->role === Role::Admin->value && $newRole !== Role::Admin->value) {
+            $adminCount = count($this->userDao->findByRole(Role::Admin));
 
             if ($adminCount <= 1) {
                 $this->session->flash(

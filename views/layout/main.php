@@ -209,7 +209,7 @@
                 <?php if ($auth->check()): ?>
                     <span style="color:var(--muted)"><?= htmlspecialchars($auth->name(), ENT_QUOTES, 'UTF-8') ?></span>
                     <a href="/profile">Profil</a>
-                    <?php if ($auth->is(\Core\Auth\Role::ADMIN)): ?>
+                    <?php if ($auth->is(\Core\Auth\Role::Admin)): ?>
                         <a href="/admin/blog/posts">Admin blog</a>
                         <a href="/admin/users">Utilisateurs</a>
                     <?php endif ?>
@@ -240,7 +240,7 @@
         </main>
 
         <footer>
-            Astral Blog 1.0 · basé sur <a href="https://github.com/astral-php/astral-core" target="_blank" rel="noopener">astral-core</a>
+            Astral Blog 2.0 · basé sur <a href="https://github.com/astral-php/astral-core" target="_blank" rel="noopener">astral-core</a>
             · starter
         </footer>
     </div>
