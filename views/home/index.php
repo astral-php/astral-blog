@@ -6,7 +6,8 @@
         Astral Blog
     </h1>
     <p style="font-size:1.1rem;color:var(--muted);max-width:36rem;line-height:1.55;margin:0 0 1.75rem">
-        Blog complet sur <strong style="color:var(--ink)">astral-core</strong> :
+        Blog complet (<strong style="color:var(--ink)">Nova orange</strong>) sur
+        <strong style="color:var(--ink)">astral-core</strong> :
         articles, catégories, tags, commentaires modérés, auth et admin.
     </p>
 
@@ -55,7 +56,7 @@
     <h2 class="font-display text-xl font-semibold text-ink">Aucun article publié</h2>
     <p class="mt-2 text-sm text-ink-muted">Créez un compte admin, puis publiez depuis l’admin blog.</p>
     <?php if (!empty($hasUsers) && $auth->check() && $auth->is(\Core\Auth\Role::Admin)): ?>
-        <a href="/admin/blog/posts/create" class="inline-flex mt-5 px-4 py-2 rounded-full bg-pine text-white text-sm font-semibold no-underline">
+        <a href="/admin/blog/posts/create" class="inline-flex mt-5 px-4 py-2 rounded-full bg-ember text-white text-sm font-semibold no-underline">
             Nouvel article
         </a>
     <?php endif ?>

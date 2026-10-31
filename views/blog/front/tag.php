@@ -7,7 +7,7 @@
     ]) ?>
 
     <div class="mb-10">
-        <p class="text-sm font-semibold text-pine uppercase tracking-[0.15em] mb-2">Tag</p>
+        <p class="text-sm font-semibold text-ember uppercase tracking-[0.15em] mb-2">Tag</p>
         <h1 class="font-display text-4xl font-bold text-ink">#<?= htmlspecialchars($tag->name, ENT_QUOTES, 'UTF-8') ?></h1>
         <p class="mt-2 text-ink-muted text-sm"><?= (int) ($pagination['total'] ?? count($posts)) ?> article(s)</p>
     </div>

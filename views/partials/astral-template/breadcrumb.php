@@ -18,7 +18,7 @@ if ($items === []) {
             <li>
                 <?php if (!empty($item['href'])): ?>
                     <a href="<?= htmlspecialchars((string) $item['href'], ENT_QUOTES, 'UTF-8') ?>"
-                       class="text-pine font-medium hover:underline">
+                       class="text-ember font-medium hover:underline">
                         <?= htmlspecialchars((string) $item['label'], ENT_QUOTES, 'UTF-8') ?>
                     </a>
                 <?php else: ?>

@@ -1,5 +1,11 @@
 # Journal des modifications
 
+## [2.0.1] — 2026-10-31
+
+### Modifié
+
+- UI **nova-orange** (tokens + Tailwind `ember` ; plus le vert starter)
+
 ## [2.0.0] — 2026-10-31
 
 ### Breaking

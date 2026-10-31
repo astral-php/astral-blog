@@ -12,9 +12,10 @@
             theme: {
                 extend: {
                     colors: {
-                        pine: { DEFAULT: '#0f6b4c', light: '#14805c' },
-                        sand: { DEFAULT: '#e8efe9', deep: '#d5ddd8' },
-                        ink: { DEFAULT: '#1a1f1c', muted: '#5c6b63' },
+                        /* Nova orange — tokens Tailwind */
+                        ember: { DEFAULT: '#c2410b', light: '#ea580c' },
+                        sand: { DEFAULT: '#f5ebe3', deep: '#e8ddd4' },
+                        ink: { DEFAULT: '#1c1612', muted: '#6b5e52' },
                     },
                     fontFamily: {
                         display: ['Fraunces', 'Georgia', 'serif'],
@@ -26,13 +27,14 @@
     </script>
     <style>
         :root {
-            --ink: #1a1f1c;
-            --muted: #5c6b63;
-            --paper: #f4f7f5;
+            /* Nova orange */
+            --ink: #1c1612;
+            --muted: #6b5e52;
+            --paper: #faf7f4;
             --panel: #ffffff;
-            --line: #d5ddd8;
-            --accent: #0f6b4c;
-            --accent-soft: #e6f2ec;
+            --line: #e8ddd4;
+            --accent: #c2410b;
+            --accent-soft: #ffedd5;
         }
         * { box-sizing: border-box; }
         body {
@@ -41,8 +43,8 @@
             font-family: "DM Sans", system-ui, sans-serif;
             color: var(--ink);
             background:
-                radial-gradient(1200px 500px at 10% -10%, #dceee5 0%, transparent 55%),
-                radial-gradient(900px 400px at 100% 0%, #e8efe9 0%, transparent 50%),
+                radial-gradient(1200px 500px at 10% -10%, #fde8d8 0%, transparent 55%),
+                radial-gradient(900px 400px at 100% 0%, #f5ebe3 0%, transparent 50%),
                 var(--paper);
         }
         a { color: var(--accent); text-decoration: none; }
@@ -72,7 +74,7 @@
         .flash-ok, .flash-err {
             border-radius: 12px; padding: 0.75rem 1rem; margin-bottom: 1rem; font-size: 0.9rem;
         }
-        .flash-ok { background: var(--accent-soft); color: #0a4d37; border: 1px solid #b7d9c8; }
+        .flash-ok { background: var(--accent-soft); color: #9a3412; border: 1px solid #fdba74; }
         .flash-err { background: #fdeceb; color: #8a1f1a; border: 1px solid #f0c2be; }
         footer {
             margin-top: 3rem; padding-top: 1.25rem; border-top: 1px solid var(--line);
@@ -97,7 +99,7 @@
             border: 1px solid var(--line);
             border-radius: 1.1rem;
             padding: 1.75rem 1.5rem;
-            box-shadow: 0 10px 30px rgba(26, 31, 28, 0.04);
+            box-shadow: 0 10px 30px rgba(28, 22, 18, 0.04);
         }
         .auth-card h1 {
             font-family: Fraunces, Georgia, serif;
@@ -151,7 +153,7 @@
         .input:focus {
             outline: none;
             border-color: var(--accent);
-            box-shadow: 0 0 0 3px rgba(15, 107, 76, 0.15);
+            box-shadow: 0 0 0 3px rgba(194, 65, 11, 0.15);
         }
         .input.is-invalid {
             border-color: #d9776f;
@@ -190,9 +192,9 @@
         .notice-ok {
             display: flex; gap: 0.65rem; align-items: flex-start;
             border-radius: 0.85rem;
-            border: 1px solid #b7d9c8;
+            border: 1px solid #fdba74;
             background: var(--accent-soft);
-            color: #0a4d37;
+            color: #9a3412;
             padding: 0.85rem 1rem;
             font-size: 0.875rem;
             line-height: 1.45;
@@ -240,8 +242,7 @@
         </main>
 
         <footer>
-            Astral Blog 2.0 · basé sur <a href="https://github.com/astral-php/astral-core" target="_blank" rel="noopener">astral-core</a>
-            · starter
+            Astral Blog · nova-orange · <a href="https://github.com/astral-php/astral-core" target="_blank" rel="noopener">astral-core</a>
         </footer>
     </div>
 </body>

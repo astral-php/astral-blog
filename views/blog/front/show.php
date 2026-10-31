@@ -10,7 +10,7 @@
     ]) ?>
 
     <article class="mt-6 rounded-3xl bg-white border border-sand-deep/80 shadow-sm overflow-hidden">
-        <div class="bg-gradient-to-br from-pine to-pine-light px-8 py-10 text-white">
+        <div class="bg-gradient-to-br from-ember to-ember-light px-8 py-10 text-white">
             <p class="text-sm text-white/70 mb-3">
                 <?= htmlspecialchars($post->published_at ?? $post->created_at, ENT_QUOTES, 'UTF-8') ?>
             </p>
@@ -98,7 +98,7 @@
                         <label for="author" class="block text-sm font-medium text-ink mb-1">Nom <span class="text-red-600">*</span></label>
                         <input type="text" id="author" name="author" required maxlength="120"
                                value="<?= htmlspecialchars((string) ($old['author'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
-                               class="w-full rounded-xl border border-sand-deep px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pine/30 focus:border-pine <?= !empty($errors['author']) ? 'border-red-400 bg-red-50' : '' ?>">
+                               class="w-full rounded-xl border border-sand-deep px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember <?= !empty($errors['author']) ? 'border-red-400 bg-red-50' : '' ?>">
                         <?php if (!empty($errors['author'][0])): ?>
                             <p class="mt-1 text-sm text-red-600"><?= htmlspecialchars($errors['author'][0], ENT_QUOTES, 'UTF-8') ?></p>
                         <?php endif ?>
@@ -107,7 +107,7 @@
                         <label for="email" class="block text-sm font-medium text-ink mb-1">E-mail <span class="text-ink-muted font-normal">(optionnel)</span></label>
                         <input type="email" id="email" name="email" maxlength="180"
                                value="<?= htmlspecialchars((string) ($old['email'] ?? ''), ENT_QUOTES, 'UTF-8') ?>"
-                               class="w-full rounded-xl border border-sand-deep px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pine/30 focus:border-pine <?= !empty($errors['email']) ? 'border-red-400 bg-red-50' : '' ?>">
+                               class="w-full rounded-xl border border-sand-deep px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember <?= !empty($errors['email']) ? 'border-red-400 bg-red-50' : '' ?>">
                         <?php if (!empty($errors['email'][0])): ?>
                             <p class="mt-1 text-sm text-red-600"><?= htmlspecialchars($errors['email'][0], ENT_QUOTES, 'UTF-8') ?></p>
                         <?php endif ?>
@@ -117,14 +117,14 @@
                 <div>
                     <label for="body" class="block text-sm font-medium text-ink mb-1">Message <span class="text-red-600">*</span></label>
                     <textarea id="body" name="body" required rows="4" maxlength="2000"
-                              class="w-full rounded-xl border border-sand-deep px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-pine/30 focus:border-pine <?= !empty($errors['body']) ? 'border-red-400 bg-red-50' : '' ?>"><?= htmlspecialchars((string) ($old['body'] ?? ''), ENT_QUOTES, 'UTF-8') ?></textarea>
+                              class="w-full rounded-xl border border-sand-deep px-3 py-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-ember/30 focus:border-ember <?= !empty($errors['body']) ? 'border-red-400 bg-red-50' : '' ?>"><?= htmlspecialchars((string) ($old['body'] ?? ''), ENT_QUOTES, 'UTF-8') ?></textarea>
                     <?php if (!empty($errors['body'][0])): ?>
                         <p class="mt-1 text-sm text-red-600"><?= htmlspecialchars($errors['body'][0], ENT_QUOTES, 'UTF-8') ?></p>
                     <?php endif ?>
                 </div>
 
                 <button type="submit"
-                        class="px-5 py-2.5 rounded-xl bg-pine text-white text-sm font-semibold hover:bg-pine-light transition">
+                        class="px-5 py-2.5 rounded-xl bg-ember text-white text-sm font-semibold hover:bg-ember-light transition">
                     Envoyer
                 </button>
             </form>
@@ -132,6 +132,6 @@
     </section>
 
     <p class="mt-10 text-center">
-        <a href="/blog" class="text-sm font-semibold text-pine hover:underline">← Retour au blog</a>
+        <a href="/blog" class="text-sm font-semibold text-ember hover:underline">← Retour au blog</a>
     </p>
 </div>

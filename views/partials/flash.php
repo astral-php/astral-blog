@@ -7,8 +7,8 @@ declare(strict_types=1);
  * Utilise $session (partagée globalement). Tailwind CSS.
  */
 if ($session->hasFlash('success')): ?>
-    <div class="mb-6 flex items-center gap-3 bg-green-50 border border-green-200 text-green-800 text-sm rounded-xl px-4 py-3">
-        <svg class="w-4 h-4 shrink-0 text-green-500" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <div class="mb-6 flex items-center gap-3 bg-orange-50 border border-orange-200 text-orange-900 text-sm rounded-xl px-4 py-3">
+        <svg class="w-4 h-4 shrink-0 text-ember" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
         </svg>
         <?= htmlspecialchars((string) $session->getFlash('success'), ENT_QUOTES, 'UTF-8') ?>
